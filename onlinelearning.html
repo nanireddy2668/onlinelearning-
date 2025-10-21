@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Learning App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f8fa;
+      margin: 0;
+    }
+    .navbar {
+      background: #003366;
+      color: #fff;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 1.5em;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2em auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 12px 1px #e2e2e2;
+      padding: 2em;
+    }
+    h2 {
+      color: #003366;
+      margin-top: 0;
+    }
+    .dashboard {
+      display: flex;
+      justify-content: space-between;
+      gap: 2em;
+    }
+    .dashboard-section {
+      width: 45%;
+    }
+    .course-list, .notifications, .messages {
+      margin: 1em 0;
+      padding: 1em;
+      border: 1px solid #cfe2f3;
+      border-radius: 7px;
+      background: #f4faff;
+    }
+    .course-item {
+      padding: .5em 0;
+      border-bottom: 1px solid #e2e2e2;
+    }
+    .course-item:last-child {
+      border-bottom: none;
+    }
+    .btn {
+      background: #0059b3;
+      color: #fff;
+      border: none;
+      padding: 0.6em 1.2em;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 0.5em;
+    }
+    /* Responsive: */
+    @media (max-width: 700px) {
+      .dashboard {
+        flex-direction: column;
+      }
+      .dashboard-section {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div>
+      <a href="#">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">Dashboard</a>
+      <a href="#">Assignments</a>
+      <a href="#">Messages</a>
+    </div>
+    <div>
+      <a href="#">Login</a> / <a href="#">Register</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h2>Welcome, Student</h2>
+    <div class="dashboard">
+      <div class="dashboard-section">
+        <h3>Your Courses</h3>
+        <div class="course-list">
+          <div class="course-item">Python Programming <button class="btn">View</button></div>
+          <div class="course-item">Java Programming <button class="btn">View</button></div>
+          <div class="course-item">JavaScript Essentials <button class="btn">View</button></div>
+          <div class="course-item">C++ Fundamentals <button class="btn">View</button></div>
+          <div class="course-item">C# Programming <button class="btn">View</button></div>
+          <div class="course-item">PHP for Web Development <button class="btn">View</button></div>
+          <div class="course-item">Ruby Programming <button class="btn">View</button></div>
+          <div class="course-item">Swift Development <button class="btn">View</button></div>
+          <div class="course-item">Go Language Basics <button class="btn">View</button></div>
+          <div class="course-item">Kotlin for Android Development <button class="btn">View</button></div>
+          <div class="course-item">Rust Programming Introduction <button class="btn">View</button></div>
+          <div class="course-item">TypeScript Essentials <button class="btn">View</button></div>
+          <div class="course-item">Scala Programming <button class="btn">View</button></div>
+          <div class="course-item">Dart with Flutter <button class="btn">View</button></div>
+          <div class="course-item">Objective-C for iOS <button class="btn">View</button></div>
+          <div class="course-item">Perl Programming <button class="btn">View</button></div>
+          <div class="course-item">R for Data Science <button class="btn">View</button></div>
+          <div class="course-item">Visual Basic Programming <button class="btn">View</button></div>
+          <div class="course-item">Shell Scripting with Bash <button class="btn">View</button></div>
+          <div class="course-item">MATLAB for Engineers <button class="btn">View</button></div>
+        </div>
+        <h3>Assignments</h3>
+        <div class="course-list">
+          <div class="course-item">Math Quiz 1 - Due: 25/10/2025 <button class="btn">Attempt</button></div>
+          <div class="course-item">Science Project - Due: 28/10/2025 <button class="btn">Submit</button></div>
+        </div>
+      </div>
+      <div class="dashboard-section">
+        <h3>Notifications</h3>
+        <div class="notifications">
+          <div>Live Lesson: Science at 5 PM</div>
+          <div>New Message from Teacher John</div>
+          <div>Assignment Reminder: Math Quiz 1</div>
+        </div>
+        <h3>Messages</h3>
+        <div class="messages">
+          <div><strong>Teacher John:</strong> Please review chapter 2!</div>
+          <div><strong>You:</strong> I've completed the assignment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
