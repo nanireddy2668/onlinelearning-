@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <style>
+        /* Basic styling for presentation */
+        body {
+            
+            font-family: Arial, sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 400px; margin-top: 15px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        input[type="text"] { width: 100%; box-sizing: border-box; }
+        input[type="button"] { padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; margin-top: 10px; border-radius: 4px; }
+        input[type="button"]:hover { background-color: #0056b3; }
+    </style>
+    <script type="text/javascript" align="center">
+        function calc() {
+            var m1, m2, m3, total = 0, result = "", grade = "", average = 0;
+           
+            // Get marks and parse them as integers
+            m1 = parseInt(document.form1.CY.value);
+            m2 = parseInt(document.form1.BY.value);
+            m3 = parseInt(document.form1.SL.value);
+           
+            // Basic input validation: check for NaN or empty inputs
+            if (isNaN(m1) || isNaN(m2) || isNaN(m3)) {
+                alert("Please enter valid numerical marks for all subjects.");
+                return;
+            }
+
+            total = m1 + m2 + m3;
+            average = total / 3;
+           
+            const PASSING_MARK = 40; // Defined the passing mark
+
+            // 1. Check for *Fail* condition (Fail in any subject)
+            if (m1 < PASSING_MARK || m2 < PASSING_MARK || m3 < PASSING_MARK) {
+                result = "Fail";
+                grade = "F";
+            }
+            // 2. Check for passing grades based on average
+            else if (average >= 90) {
+                result = "Outstanding";
+                grade = "O";
+            } else if (average >= 80) { // 80 - 89
+                result = "Excellent";
+                grade = "A++";
+            } else if (average >= 70) { // 70 - 79
+                result = "Very Good";
+                grade = "A";
+            } else if (average >= 60) { // 60 - 69
+                result = "Good";
+                grade = "B++";
+            } else if (average >= 50) { // 50 - 59
+                result = "Above Average";
+                grade = "B";
+            } else if (average >= 45) { // 45 - 49
+                result = "Average";
+                grade = "C"; // Uppercased for consistency
+            } else if (average >= PASSING_MARK) { // 40 - 44
+                result = "Pass";
+                grade = "P";
+            }
+            // Note: The final "else if(average<40)" is redundant if the first check passes
+
+            // Display results
+            document.form1.total.value = total;
+            document.form1.average.value = average.toFixed(2); // Display average with 2 decimal places
+            document.form1.result.value = result;
+            document.form1.grade.value = grade;
+        }
+    </script>
+</head>
+
+<body align="center" bgcolor="#452f43">
+    <h1>Student Mark Sheet</h1>
+   
+    <form name="form1">
+        <table align="center" bgcolor="#09e0d6">
+            <tr>
+                <th colspan="2">Enter Subject Marks</th>
+            </tr>
+            <tr>
+                <td>Chemistry(CY)</td>
+                <td><input type="text" name="CY" placeholder="Enter Mark"></td>
+            </tr>
+            <tr>
+                <td>Biology(BY)</td>
+                <td><input type="text" name="BY" placeholder="Enter Mark"></td>
+            </tr>
+            <tr>
+                <td>Social(SL)</td>
+                <td><input type="text" name="SL" placeholder="Enter Mark"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="button" value="Calculate Results" onclick="calc()">
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">Calculated Results</th>
+            </tr>
+            <tr>
+                <td>Total Marks</td>
+                <td><input type="text"placeholder="Total Marks:" name="total" readonly></td>
+            </tr>
+            <tr>
+                <td>Average Mark</td>
+                <td><input type="text" placeholder="Average Mark:"name="average" readonly></td>
+            </tr>
+            <tr>
+                <td>Result Status</td>
+                <td><input type="text" placeholder="Result Status:"name="result" readonly></td>
+            </tr>
+            <tr>
+                <td>Grade Awarded</td>
+                <td><input type="text" placeholder="Grade:"name="grade" readonly></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

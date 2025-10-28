@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Image Fixed Example</title>
+<style>
+  body {
+    height: 200vh; /* Makes the page scrollable for demo */
+    background-color: #bfccdc;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  /* CSS rule for fixed, tilted background image */
+  body::before {
+    content: "";
+    position: fixed;                 /* Image stays in place when scrolling */
+    top: 60%;                        /* Halfway down the viewport */
+    left: 50%;                       /* Center horizontally */
+    transform: translate(-50%, -50%) rotateX(25deg); /* Tilt horizontally */
+    width: 800px;
+    height: 900px;
+    background-image: url('https://res.cloudinary.com/dwqnhw8ee/image/upload/v1760433515/IMG20230902115547_-_Copy_eqolta.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;                     /* Behind content */
+    box-shadow: 0 0 30px rgba(0,0,0,0.4); /* Soft shadow effect */
+  }
+  h1, p {
+    text-align: center;
+    padding-top: 100px;
+  }
+</style>
+</head>
+<body>
+<h1>Fixed, Tilted Background Image Example</h1>
+  <p>Scroll up and down — notice the image remains fixed halfway down the screen, slightly tilted horizontally.</p>
+  <p>CSS used: <code>position: fixed</code> and <code>transform: rotateX(25deg)</code>.</p>
+  <p>Hii I am Anil kumar Reddy.<br><br>I am currently pursuing my B.Tech 3rd year in Madanapalle Institute of Technology and Science<br><br>I am interested in Web-Devolopment.</p>
+</body>
+</html>
